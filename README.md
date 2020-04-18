@@ -1,6 +1,4 @@
-# NIPT_NCV
-
-# NCV implementation
+# A NCV implementation by Luyu
 
 ### Installation
 1. Install **BWA** and **samtools**
