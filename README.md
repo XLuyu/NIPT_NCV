@@ -8,7 +8,7 @@
     3. Build index `bwa index hg38.fa` 
 3. Install `python2`/`python3`
 5. Install `numpy`, `pandas`, `pysam`, `tqdm`, `pp` by pip
-6. Download all files here
+6. Download all files In [this repository](https://codeload.github.com/XLuyu/NIPT_NCV/zip/master)
 
 ### Folder structure
 
