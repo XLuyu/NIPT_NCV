@@ -10,13 +10,13 @@
 5. Install `numpy`, `pandas`, `pysam`, `tqdm`, `pp` by pip
 6. Download all files here
 
-## Structure
+### Folder structure
 
-`NCV_ver_1.6.py`: main executable python script.
-`genome_browser.py`: auxiliary file to generate chromosome view html.
-`batch3_females` and `batch3_males`: example of the format for `-f`/`-m`/`-s` arguments.
-`ncv.model`: a pre-trained model to quick start.
-`hg38_cytoBand.txt`: the hg38 reference cytoband annotation file.
+1. `NCV_ver_1.6.py`: main executable python script.
+2. `genome_browser.py`: auxiliary file to generate chromosome view html.
+3. `batch3_females` and `batch3_males`: example of the format for `-f`/`-m`/`-s` arguments.
+4. `ncv.model`: a pre-trained model to quick start.
+5. `hg38_cytoBand.txt`: the hg38 reference cytoband annotation file.
 
 ### Usage
 1. use BWA to map raw reads to reference genome  and sort them by samtools `bwa mem -t 20 hg38.fa sample.fq.gz | samtools sort -@ 20 - -o sample.bam`
@@ -26,6 +26,13 @@
 `python NCV_1.5.py train -m male.lst -f female.lst`
     2. test a batch of NIPT samples:
 `python NCV_1.5.py test -s test.lst`
+ 
+ ### Output
+ The train model only outputs a model file specified by `-m` option (by default, `ncv.model` in current folder)
+ The test model will create a new folder specified by `-o` (by default, current date and time)。In that folder:
+    1. `table.csv`: all samples all chromosome z-scores to view by excel 
+    2. `table.html`: all samples all chromosome z-scores to view by web browser
+    3. subfolders: one subfolder for each samples. In each subfolder, every chomosome has one html file to view bin-based z-score, for manual inspection of micro-insertion/deletion.
  
 ---
 Type `python NCV_ver_1.6.py --help` to show help information:
@@ -53,5 +60,5 @@ optional arguments:
                         sample path.
   -s TEST, --test TEST  A file that each line contains a test sample path.
   -o OUTPUT, --output OUTPUT
-                        Output filename prefix [default=NCV]
+                        Output filename prefix [default=<current time>]
 ```
