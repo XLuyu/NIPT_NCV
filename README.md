@@ -34,7 +34,7 @@ usage: NCV_ver_1.6.py [-h] [-p CPUS] [-d MODEL] [-m MALE] [-f FEMALE]
                       [-s TEST] [-o OUTPUT]
                       mode
 
-A Python implementation of NCV for NIPT. Output in tsv format.
+A Python implementation of NCV for NIPT. 
 
 positional arguments:
   mode                  <train/test> In train mode, -m and -f are required. In
