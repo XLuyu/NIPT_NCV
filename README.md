@@ -31,9 +31,9 @@
  The train model only outputs a model file specified by `-m` option (by default, `ncv.model` in current folder)
  
  The test model will create a new folder specified by `-o` (by default, current date and time)。In that folder:
-1. `table.csv`: all samples all chromosome z-scores to view by excel 
-2. `table.html`: all samples all chromosome z-scores to view by web browser
-3. subfolders: one subfolder for each samples. In each subfolder, every chomosome has one html file to view bin-based z-score, for manual inspection of micro-insertion/deletion.
+1. `table.csv`: A z-score excel table where row=sample and column=chromosome
+2. `table.html`: A z-score web table where row=sample and column=chromosome
+3. Subfolders: One subfolder for each samples. In each subfolder, every chomosome has one html file to view bin-based z-score, for manual inspection of micro-insertion/deletion.
  
 ---
 Type `python NCV_ver_1.6.py --help` to show help information:
