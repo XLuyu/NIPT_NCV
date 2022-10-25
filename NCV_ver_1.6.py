@@ -103,7 +103,7 @@ def buildNCVTableTests(counts, refset):
 
 def NCVtest(args):
     ### input
-    refset, bin_mean_std = pickle.load(open(args.model))
+    refset, bin_mean_std = pickle.load(open(args.model, "rb"))
     filenames = [os.path.abspath(line.strip()) for line in open(args.test) if line.strip() != ""]
     job_server = pp.Server(min(6, args.cpus), ppservers=("*:3456",))
     test = tqdm_pp_jobs([job_server.submit(get_readcount_table, (f,), modules=("pysam",)) for f in filenames], desc="Test samples")
