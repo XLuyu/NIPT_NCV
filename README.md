@@ -6,7 +6,7 @@
     1. Download `wget http://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/hg38.fa.gz`
     2. Unzip `gunzip hg38.fa.gz`
     3. Build index `bwa index hg38.fa` 
-3. Install `python2`/`python3`
+3. Install `python2`
 5. Install `numpy`, `pandas`, `pysam`, `tqdm`, `pp` by pip
 6. Download all files In [this repository](https://codeload.github.com/XLuyu/NIPT_NCV/zip/master)
 
