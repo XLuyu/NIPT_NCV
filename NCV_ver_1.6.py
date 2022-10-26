@@ -28,10 +28,10 @@ def get_readcount_table(filepath):
     chrlen = {i['SN']:i['LN'] for i in bamfile.header['SQ'] if i['SN'] in chroms}
     count_array = {}
     for chr in chroms:
-        array = [0]*(chrlen[chr]/50000+1)
+        array = [0]*(chrlen[chr]//50000+1)
         for read in bamfile.fetch(chr):
             pos = read.reference_end-1 if read.is_reverse else read.reference_start
-            array[pos/50000] += 1
+            array[pos//50000] += 1
         count_array[chr] = array
     return count_array
 
